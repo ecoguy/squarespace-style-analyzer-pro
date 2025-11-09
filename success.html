@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - Squarespace Style Analyzer Pro</title>
+<style>
+body { font-family: Arial, sans-serif; text-align: center; background: #f0fff4; color: #333; }
+.container { margin-top: 100px; }
+a { color: #635bff; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎉 Thank You for Upgrading!</h1>
+<p>Your payment was successful. Your subscription to <b>Squarespace Style Analyzer Pro</b> is now active.</p>
+<p>You can now enjoy full unlimited use for one year.</p>
+<p>If you encounter any issues, please contact <a href="mailto:squarespacetools@gmail.com">squarespacetools@gmail.com</a>.</p>
+</div>
+<script>
+(async () => {
+  try {
+    await fetch("https://squarespace-style-analyzer-pro.eamass.workers.dev/confirm", { method: "POST" });
+  } catch (e) { console.log("Confirmation failed", e); }
+})();
+</script>
+</body>
+</html>

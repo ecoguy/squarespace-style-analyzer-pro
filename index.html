@@ -554,10 +554,10 @@
     <div class="hero-content">
       <h1>🎨 Squarespace Style Analyzer Pro</h1>
       <p>Professional site analysis tool for Squarespace websites. Identify styles, headings, paragraphs, and buttons with precision. Five important quality checks. Images alt text checks. Detailed and beautiful reports.</p>
-      <div class="cta-buttons">
+<!--      <div class="cta-buttons">
         <a href="#" class="btn btn-primary">Add to Chrome - It's Free</a>
         <a href="#features" class="btn btn-secondary">Learn More</a>
-      </div>
+      </div>  -->
     </div>
   </div>
 
@@ -618,10 +618,10 @@
         <p>Export to CSV for spreadsheet analysis and stunning HTML reports with interactive table of contents and style previews.</p>
       </div>     
     </div>
-    	<div class="try-it-box">
+<!--    	<div class="try-it-box">
         <h3>Try It and See for Yourself</h3>
         <a href="#" class="btn">Add to Chrome - Start Free Trial</a>
-        </div>
+        </div>  -->
   </div>
 
   <div class="use-cases" id="use">
@@ -672,10 +672,10 @@
         </div>
       </div>
 
-      <div class="try-it-box">
+<!--      <div class="try-it-box">
         <h3>Try It and See for Yourself</h3>
         <a href="#" class="btn">Add to Chrome - Start Free Trial</a>
-      </div>
+      </div>  -->
     </div>
   </div>
 
@@ -769,7 +769,10 @@
             <li>Priority support</li>
             <li>Lifetime updates</li>
           </ul>
-          <a href="#" class="btn btn-primary">Upgrade Now</a>
+          <div class="try-it-box">
+		  <button class="btn" id="subscribeBtn">Upgrade for Only $19.99 for Unlimited Use for One Year</button>
+		  <p id="status" style="margin-top:15px; color:#666;"></p>
+		  </div>
         </div>
       </div>
     </div>
@@ -778,6 +781,24 @@
         <a href="#" class="btn">Add to Chrome - Start Free Trial</a>
       	</div>
   </div>
+  
+<script>
+const API_BASE = "https://squarespace-style-analyzer-pro.eamass.workers.dev";
+document.getElementById("subscribeBtn").addEventListener("click", async () => {
+  const status = document.getElementById("status");
+  status.textContent = "Redirecting to checkout...";
+  try {
+    const res = await fetch(`${API_BASE}/create-checkout`, { method: "POST" });
+    const data = await res.json();
+    if (data.url) window.location.href = data.url;
+    else status.textContent = "Error: Unable to create checkout session.";
+  } catch (err) {
+    status.textContent = "Network error. Please try again.";
+  }
+});
+</script>
+  
+  
 <!--
   <div class="testimonials">
     <div class="container">
